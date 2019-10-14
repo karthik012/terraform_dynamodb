@@ -1,5 +1,5 @@
 resource "aws_dynamodb_table" "db_with_multipleattributes" {
-  count          = "${var.create_dynamodb_table_multipleattributes ? 1 : 0}"
+  count          = "${var.create_dynamodb_table_multiple_attributes ? 1 : 0}"
   name           = "${var.name}"
   billing_mode   = "${var.billing_mode}"
   read_capacity  = "${var.read_capacity}"
@@ -9,12 +9,10 @@ resource "aws_dynamodb_table" "db_with_multipleattributes" {
   server_side_encryption {
     enabled = "${var.enable_server_side_encryption}"
   }
-  
+
   attributes = "${var.dynamodb_attributes}"
 
   lifecycle {
     ignore_changes = ["read_capacity", "write_capacity"]
   }
-
-  tags = "${var.tags}"
 }

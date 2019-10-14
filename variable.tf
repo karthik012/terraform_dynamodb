@@ -10,6 +10,7 @@ variable "hash_key" {
 
 variable "billing_mode" {
   type        = "string"
+  default     = "PROVISIONED"
   description = "Controls how you are charged for read and write throughput and how you manage capacity. The valid values are PROVISIONED and PAY_PER_REQUEST. Defaults to PROVISIONED."
 }
 
@@ -26,13 +27,19 @@ variable "write_capacity" {
 }
 
 variable "dynamodb_attributes" {
-  type = "list"
-  default = []
+  type        = "list"
+  default     = []
   description = "a list of db parameter maps to apply"
 }
 
 variable "tags" {
-  type        = "map"
+  type = "map"
+
+  default = {
+    Name = "table1"
+    Env  = "Dev"
+  }
+
   description = "Tags for the dynamodb table"
 }
 
