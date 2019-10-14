@@ -10,7 +10,7 @@ resource "aws_dynamodb_table" "db_with_multipleattributes" {
     enabled = "${var.enable_server_side_encryption}"
   }
 
-  attributes = "${var.dynamodb_attributes}"
+  attribute = "${var.dynamodb_attributes}"
 
   lifecycle {
     ignore_changes = ["read_capacity", "write_capacity"]
