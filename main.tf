@@ -1,5 +1,4 @@
 resource "aws_dynamodb_table" "db_with_multipleattributes" {
-  create_dynamodb_table          = "${var.create_dynamodb_table_multiple_attributes ? 1 : 0}"
   name           = "${var.name}"
   billing_mode   = "${var.billing_mode}"
   read_capacity  = "${var.read_capacity}"
@@ -11,5 +10,5 @@ resource "aws_dynamodb_table" "db_with_multipleattributes" {
   }
 
   attribute = "${var.dynamodb_attributes}"
-  tags = "${var.tags}"
+  tags      = "${var.tags}"
 }
