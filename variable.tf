@@ -48,11 +48,6 @@ variable "enable_server_side_encryption" {
   default     = "true"
 }
 
-variable "create_dynamodb_table" {
-  description = "Denotes if the dynamodb table to be created"
-  default     = true
-}
-
 variable "create_dynamodb_table_multiple_attributes" {
   description = "Denotes if the dynamodb table to be created"
   default     = false
