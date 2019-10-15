@@ -26,6 +26,12 @@ variable "write_capacity" {
   description = "The number of write units for this table. If the billing_mode is PROVISIONED, this field is required."
 }
 
+variable "attributes" {
+  type        = "list"
+  default     = []
+  description = "a list of db parameter maps to apply"
+}
+
 variable "dynamodb_attributes" {
   type        = "list"
   default     = []
@@ -53,20 +59,12 @@ variable "create_dynamodb_table_multiple_attributes" {
   default     = false
 }
 
-variable "hash_key_type" {
-  type        = "string"
-  default     = "S"
-  description = "Hash Key type, which must be a scalar type: `S`, `N`, or `B` for (S)tring, (N)umber or (B)inary data"
-}
-
 variable "range_key" {
-  type        = "string"
-  default     = ""
-  description = "DynamoDB table Range Key"
+  type    = "string"
+  default = ""
 }
 
-variable "range_key_type" {
-  type        = "string"
-  default     = "S"
-  description = "Range Key type, which must be a scalar type: `S`, `N`, or `B` for (S)tring, (N)umber or (B)inary data"
+variable "dynamodb_attributes" {
+  type    = "list"
+  default = []
 }
