@@ -9,6 +9,6 @@ resource "aws_dynamodb_table" "db_with_multipleattributes" {
     enabled = "${var.enable_server_side_encryption}"
   }
 
-  attribute = "${var.dynamodb_attributes}"
+  attribute = ["${var.dynamodb_attributes}"]
   tags      = "${var.tags}"
 }
