@@ -68,3 +68,8 @@ variable "dynamodb_attributes" {
   type    = "list"
   default = []
 }
+
+variable "global_secondary_index" {
+  type    = "list"
+  default = []
+}

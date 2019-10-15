@@ -24,7 +24,9 @@ resource "aws_dynamodb_table" "db_with_multipleattributes" {
   read_capacity  = "${var.read_capacity}"
   write_capacity = "${var.write_capacity}"
   hash_key       = "${var.hash_key}"
+  range_key      = "${var.range_key}"
   attribute      = ["${local.attributes_final}"]
+  global_secondary_index = ["${var.global_secondary_index}"]
 
   server_side_encryption {
     enabled = "${var.enable_server_side_encryption}"
